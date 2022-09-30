@@ -1,0 +1,3 @@
+/Users/timuxi/CLionProjects/uwb/cmake-build-debug/CMakeFiles/uwb.dir
+/Users/timuxi/CLionProjects/uwb/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/timuxi/CLionProjects/uwb/cmake-build-debug/CMakeFiles/rebuild_cache.dir
