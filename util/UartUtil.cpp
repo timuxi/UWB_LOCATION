@@ -23,8 +23,6 @@ int UartUtil::uart_open(const char *pathname)
     /*测试是否为终端设备*/
     if (isatty(STDIN_FILENO) == 0)
         printf("standard input is not a terminal device\n");
-    else
-        printf("isatty success!\n");
     return fd;
 }
 
@@ -117,13 +115,11 @@ int UartUtil::uart_set(int nSpeed) const
         perror("com set error");
         return -1;
     }
-    printf("set done!\n");
     return 0;
 }
 
 int UartUtil::uart_close() const
 {
-    assert(fd);
     close(fd);
     /*可以在这里做些清理工作*/
     return 0;
@@ -135,10 +131,9 @@ int UartUtil::writeData(char *send_buffer, int length) const
     return length;
 }
 
-int UartUtil::readData(char *recv_buffer, int length) const
+long UartUtil::readData(char *recv_buffer, int length) const
 {
-    bzero(recv_buffer, length);
-    int ret = read(fd, recv_buffer, length);
+    long ret = read(fd, recv_buffer, length);
     if (ret == -1)
     {
         printf("uart read failed!\n");

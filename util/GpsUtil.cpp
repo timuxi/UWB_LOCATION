@@ -1,9 +1,5 @@
 
-
-#include <sys/time.h>
-#include <vector>
 #include <iostream>
-#include <sstream>
 #include "GpsUtil.h"
 using namespace std;
 
@@ -107,15 +103,7 @@ void GpsUtil::getZ(char *chr)
     gps3 = gps3.substr(st, ed - st + 1);
 }
 
-string GpsUtil::getTime()
-{
-    time_t now1 = time(nullptr);
-    tm *tm_t = localtime(&now1);
-    stringstream ss;
-    ss << tm_t->tm_year + 1900 << ((tm_t->tm_mon + 1) > 9 ? "-" : "-0") << tm_t->tm_mon + 1 << ((tm_t->tm_mday) > 9 ? "-" : "-0") << tm_t->tm_mday
-       << ((tm_t->tm_hour) > 9 ? " " : " 0") << tm_t->tm_hour << ((tm_t->tm_min) > 9 ? ":" : ":0") << tm_t->tm_min << ((tm_t->tm_sec) > 9 ? ":" : ":0") << tm_t->tm_sec;
-    return ss.str();
-}
+
 
 void GpsUtil::printGpsDataAll(char *chr)
 {

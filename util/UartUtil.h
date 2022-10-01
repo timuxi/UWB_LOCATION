@@ -8,7 +8,7 @@ class UartUtil {
 public:
     int usbInit(const string& port, int bord);
     int writeData(char *send_buffer, int length) const;
-    int readData(char *recv_buffer, int length) const;
+    long readData(char *recv_buffer, int length) const;
     int uart_close() const;
 
 private:
